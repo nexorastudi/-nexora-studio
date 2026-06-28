@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Nexora Studio | Votre croissance commence par une image forte</title>
+    <meta name="description" content="Nexora Studio propulse votre entreprise grâce au Branding, à l'Intelligence Artificielle, au Community Management et au Marketing Digital. Découvrez notre expertise premium.">
+    <meta name="keywords" content="Nexora Studio, Branding, Intelligence Artificielle, Community Management, Marketing Digital, Growth Strategy, Design Suisse, Agence Digitale, UI UX">
+    <link rel="canonical" href="https://nexorastudio.com/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nexorastudio.com/">
+    <meta property="og:title" content="Nexora Studio | Votre croissance commence par une image forte">
+    <meta property="og:description" content="Propulsez votre marque avec l'excellence du design minimaliste et l'innovation de l'IA.">
+    <meta property="og:image" content="https://nexorastudio.com/assets/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nexorastudio.com/">
+    <meta property="twitter:title" content="Nexora Studio | Votre croissance commence par une image forte">
+    <meta property="twitter:description" content="Propulsez votre marque avec l'excellence du design minimaliste et l'innovation de l'IA.">
+    <meta property="twitter:image" content="https://nexorastudio.com/assets/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#2563EB',
+                        brandBg: '#111111',
+                        brandSurface: '#1F2937',
+                        brandText: '#F5F5F5',
+                        brandAccent: '#60A5FA',
+                    },
+                    fontFamily: {
+                        sora: ['Sora', 'sans-serif'],
+                        manrope: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brandBg text-brandText font-manrope overflow-x-hidden antialiased">
+
+    <div id="preloader" class="fixed inset-0 bg-brandBg z-50 flex flex-col justify-center items-center gap-4">
+        <div class="text-3xl font-sora font-extrabold tracking-tight bg-gradient-to-r from-white via-brandAccent to-brandPrimary bg-clip-text text-transparent animate-pulse">NEXORA</div>
+        <div class="w-16 h-[2px] bg-neutral-800 relative overflow-hidden rounded-full">
+            <div class="absolute top-0 left-0 h-full w-1/2 bg-brandPrimary animate-loading-bar"></div>
+        </div>
+    </div>
+
+    <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 font-sora font-bold text-xl tracking-tight" aria-label="Nexora Studio Accueil">
+                <svg class="w-8 h-8 text-brandPrimary" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                    <path d="M8 24V8L16 18L24 8V24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>NEXORA</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-neutral-400">
+                <a href="#about" class="hover:text-white transition-colors duration-200">Studio</a>
+                <a href="#services" class="hover:text-white transition-colors duration-200">Services</a>
+                <a href="#process" class="hover:text-white transition-colors duration-200">Méthode</a>
+                <a href="#portfolio" class="hover:text-white transition-colors duration-200">Portfolio</a>
+                <a href="#faq" class="hover:text-white transition-colors duration-200">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="btn-ripple bg-white text-black px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-neutral-200 transition-all shadow-lg tracking-tight">
+                    Commencer un projet
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Ouvrir le menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brandBg/95 backdrop-blur-xl border-b border-neutral-800 px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+            <a href="#about" class="mobile-link hover:text-brandAccent">Studio</a>
+            <a href="#services" class="mobile-link hover:text-brandAccent">Services</a>
+            <a href="#process" class="mobile-link hover:text-brandAccent">Méthode</a>
+            <a href="#portfolio" class="mobile-link hover:text-brandAccent">Portfolio</a>
+            <a href="#faq" class="mobile-link hover:text-brandAccent">FAQ</a>
+            <a href="#contact" class="mobile-link bg-brandPrimary text-center py-3 rounded-full font-semibold text-white">Commencer un projet</a>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brandPrimary/10 rounded-full blur-[120px] pointer-events-none animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] bg-brandAccent/10 rounded-full blur-[100px] pointer-events-none animate-float" style="animation-delay: -3s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 flex flex-col gap-6 reveal">
+                <div class="inline-flex items-center gap-2 bg-brandSurface/60 border border-neutral-800 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-brandAccent w-fit backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-brandAccent animate-ping"></span> AGENCE DIGITALE DE HAUTE COUTURE
+                </div>
+                <h1 class="font-sora text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
+                    Votre croissance commence par une <span class="bg-gradient-to-r from-brandAccent to-brandPrimary bg-clip-text text-transparent">image forte.</span>
+                </h1>
+                <p class="text-neutral-400 text-lg md:text-xl max-w-xl font-normal leading-relaxed">
+                    Nous fusionnons stratégie de marque, design d’avant-garde et intelligence artificielle pour propulser votre entreprise vers des sommets inégalés.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 mt-4">
+                    <a href="#contact" class="btn-ripple bg-brandPrimary text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-blue-700 transition-all shadow-xl shadow-brandPrimary/20">Explorer nos services</a>
+                    <a href="#portfolio" class="bg-brandSurface/40 border border-neutral-800 text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-brandSurface transition-all backdrop-blur-sm">Voir notre portfolio</a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+                <div class="glass-card p-6 rounded-3xl flex flex-col gap-2">
+                    <div class="font-sora text-4xl font-bold text-white tracking-tight counter" data-target="98">0%</div>
+                    <div class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Taux de Rétention Client</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl flex flex-col gap-2">
+                    <div class="font-sora text-4xl font-bold text-brandAccent tracking-tight counter" data-target="150">0+</div>
+                    <div class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Projets Propulsés</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl flex flex-col gap-2">
+                    <div class="font-sora text-4xl font-bold text-white tracking-tight counter" data-target="4">0x</div>
+                    <div class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Croissance CA Moyen</div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl flex flex-col gap-2">
+                    <div class="font-sora text-4xl font-bold text-brandPrimary tracking-tight counter" data-target="24">0/7</div>
+                    <div class="text-xs text-neutral-400 uppercase tracking-widest font-semibold">Support IA Intégré</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 relative border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4 reveal">
+                    <h2 class="text-xs font-bold tracking-widest uppercase text-brandPrimary mb-3">Qui sommes-nous</h2>
+                    <p class="font-sora text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">L'excellence au service de l'avant-garde numérique.</p>
+                </div>
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 reveal" style="transition-delay: 100ms;">
+                    <div class="flex flex-col gap-3">
+                        <h3 class="font-sora text-lg font-semibold text-white flex items-center gap-2"><i data-lucide="target" class="text-brandAccent w-5 h-5"></i> Notre Mission</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Accompagner les entreprises audacieuses dans la structuration de marques mémorables et pérennes à travers des écosystèmes digitaux de pointe.</p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <h3 class="font-sora text-lg font-semibold text-white flex items-center gap-2"><i data-lucide="eye" class="text-brandAccent w-5 h-5"></i> Notre Vision</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Devenir le standard mondial de la convergence entre l'esthétique pure du design suisse et la puissance algorithmique moderne.</p>
+                    </div>
+                    <div class="flex flex-col gap-3 md:col-span-2 pt-4 border-t border-neutral-900 mt-4">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-2">Nos Valeurs Cardinales</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <div class="p-4 bg-brandSurface/20 rounded-2xl border border-neutral-900 text-center"><p class="text-xs font-bold text-neutral-300">Précision Suisse</p></div>
+                            <div class="p-4 bg-brandSurface/20 rounded-2xl border border-neutral-900 text-center"><p class="text-xs font-bold text-neutral-300">Innovation Radicale</p></div>
+                            <div class="p-4 bg-brandSurface/20 rounded-2xl border border-neutral-900 text-center"><p class="text-xs font-bold text-neutral-300">Esthétique Luxe</p></div>
+                            <div class="p-4 bg-brandSurface/20 rounded-2xl border border-neutral-900 text-center"><p class="text-xs font-bold text-neutral-300">Orientation Impact</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 bg-gradient-to-b from-brandBg to-neutral-950 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brandAccent mb-3">Expertises Opérationnelles</h2>
+                <p class="font-sora text-3xl md:text-5xl font-bold text-white tracking-tight">Des compétences d'élite pour une croissance calibrée.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group hover:border-brandPrimary/40 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandPrimary/10 flex items-center justify-center text-brandPrimary mb-6 group-hover:scale-110 transition-transform duration-300"><i data-lucide="layers"></i></div>
+                        <h3 class="font-sora text-xl font-bold text-white mb-3">Branding Premium</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Création d’identités de marque mémorables, chartes graphiques d’exception et positionnement haut de gamme sur le marché.</p>
+                        <ul class="text-xs text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Design de logotype d'élite</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Architecture de marque globale</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="text-xs font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-brandAccent transition-colors">Commander <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group hover:border-brandPrimary/40 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandPrimary/10 flex items-center justify-center text-brandPrimary mb-6 group-hover:scale-110 transition-transform duration-300"><i data-lucide="cpu"></i></div>
+                        <h3 class="font-sora text-xl font-bold text-white mb-3">Intelligence Artificielle</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Intégration d'outils d'automatisation IA personnalisés, agents conversationnels avancés et génération d'actifs par LLM.</p>
+                        <ul class="text-xs text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Automatisation des workflows</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Modèles de traitement prédictif</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="text-xs font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-brandAccent transition-colors">Déployer <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group hover:border-brandPrimary/40 transition-all duration-300 reveal" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandPrimary/10 flex items-center justify-center text-brandPrimary mb-6 group-hover:scale-110 transition-transform duration-300"><i data-lucide="users"></i></div>
+                        <h3 class="font-sora text-xl font-bold text-white mb-3">Community Management</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Fidélisation d'audiences haut de gamme, création de contenus à forte valeur ajoutée et animation quotidienne de vos réseaux.</p>
+                        <ul class="text-xs text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Stratégie de contenu éditoriale</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Analyse d'engagement fine</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="text-xs font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-brandAccent transition-colors">Engager <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group hover:border-brandPrimary/40 transition-all duration-300 reveal">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandPrimary/10 flex items-center justify-center text-brandPrimary mb-6 group-hover:scale-110 transition-transform duration-300"><i data-lucide="megaphone"></i></div>
+                        <h3 class="font-sora text-xl font-bold text-white mb-3">Marketing Digital</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Campagnes de performance scalables sur Google Ads, Meta Ads et LinkedIn Ads axées uniquement sur le retour sur investissement.</p>
+                        <ul class="text-xs text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Tunnels d’acquisition ultra-optimisés</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Tracking & analytics avancés</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="text-xs font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-brandAccent transition-colors">Lancer <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between group hover:border-brandPrimary/40 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brandPrimary/10 flex items-center justify-center text-brandPrimary mb-6 group-hover:scale-110 transition-transform duration-300"><i data-lucide="trending-up"></i></div>
+                        <h3 class="font-sora text-xl font-bold text-white mb-3">Growth Strategy</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Ingénierie de croissance holistique pour identifier vos leviers de conversion cachés et accélérer votre traction marché.</p>
+                        <ul class="text-xs text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Audit complet de l’écosystème</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brandAccent"></i> Implémentation de boucles virales</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="text-xs font-bold tracking-widest text-white uppercase flex items-center gap-2 group-hover:text-brandAccent transition-colors">Scaler <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-32 relative border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brandPrimary mb-3">Notre Méthodologie</h2>
+                <p class="font-sora text-3xl md:text-5xl font-bold text-white tracking-tight">Cinq étapes vers la suprématie numérique.</p>
+            </div>
+
+            <div class="relative border-l border-neutral-800 ml-4 md:ml-32 space-y-12">
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brandBg border-2 border-brandPrimary flex items-center justify-center font-sora text-xs font-bold text-white">01</div>
+                    <div class="glass-card p-6 rounded-2xl max-w-3xl">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-1">Discovery (Découverte)</h3>
+                        <p class="text-neutral-400 text-sm">Immersion totale dans votre univers. Analyse concurrentielle, entretiens avec les parties prenantes et extraction des insights fondamentaux de votre écosystème.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brandBg border-2 border-brandAccent flex items-center justify-center font-sora text-xs font-bold text-white">02</div>
+                    <div class="glass-card p-6 rounded-2xl max-w-3xl">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-1">Stratégie Fondatrice</h3>
+                        <p class="text-neutral-400 text-sm">Cadrage opérationnel et stratégique. Alignement des objectifs business avec l'architecture de marque, planification média et feuille de route technologique.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brandBg border-2 border-neutral-700 flex items-center justify-center font-sora text-xs font-bold text-white">03</div>
+                    <div class="glass-card p-6 rounded-2xl max-w-3xl">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-1">Design & Conception</h3>
+                        <p class="text-neutral-400 text-sm">Phase de production intensive. Prototypage haute fidélité, écriture de chartes de design exclusives et direction artistique calibrée selon les codes du luxe.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brandBg border-2 border-brandPrimary flex items-center justify-center font-sora text-xs font-bold text-white">04</div>
+                    <div class="glass-card p-6 rounded-2xl max-w-3xl">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-1">Launch (Déploiement)</h3>
+                        <p class="text-neutral-400 text-sm">Mise en ligne, orchestration de campagnes de lancement d’envergure et implémentation des infrastructures d’intelligence artificielle dans vos systèmes.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-brandBg border-2 border-brandAccent flex items-center justify-center font-sora text-xs font-bold text-white">05</div>
+                    <div class="glass-card p-6 rounded-2xl max-w-3xl">
+                        <h3 class="font-sora text-lg font-semibold text-white mb-1">Optimisation Continue</h3>
+                        <p class="text-neutral-400 text-sm">Suivi analytique en temps réel. Analyse des comportements utilisateurs (Heatmaps), tests A/B et itérations agiles pour maximiser le taux de conversion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-32 bg-neutral-950 border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 reveal">
+                <div>
+                    <h2 class="text-xs font-bold tracking-widest uppercase text-brandAccent mb-3">Réalisations Récentes</h2>
+                    <p class="font-sora text-3xl md:text-5xl font-bold text-white tracking-tight">Le catalogue de nos chefs-d'œuvre.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 border-b border-neutral-900 pb-2">
+                    <button class="filter-btn active px-4 py-2 text-xs font-bold uppercase tracking-wider transition" data-filter="all">Tous</button>
+                    <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider transition text-neutral-500" data-filter="branding">Branding</button>
+                    <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider transition text-neutral-500" data-filter="ia">IA & Tech</button>
+                    <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider transition text-neutral-500" data-filter="marketing">Marketing</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="portfolio-item glass-card overflow-hidden rounded-3xl group relative reveal" data-category="branding">
+                    <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Projet Aurelia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 loading-lazy">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex justify-between items-end">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-brandAccent uppercase">Branding & Luxe</span>
+                            <h3 class="font-sora text-2xl font-bold text-white mt-1">Aurelia Case</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="arrow-up-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item glass-card overflow-hidden rounded-3xl group relative reveal" data-category="ia" style="transition-delay: 100ms;">
+                    <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80" alt="Projet Chronos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 loading-lazy">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex justify-between items-end">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-brandPrimary uppercase">Automation IA</span>
+                            <h3 class="font-sora text-2xl font-bold text-white mt-1">Chronos Analytics</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="arrow-up-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item glass-card overflow-hidden rounded-3xl group relative reveal" data-category="marketing">
+                    <div class="w-full aspect-[16/10] bg-neutral-900 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Projet Veloce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 loading-lazy">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-20 flex justify-between items-end">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-brandAccent uppercase">Growth Marketing</span>
+                            <h3 class="font-sora text-2xl font-bold text-white mt-1">Veloce Campaign</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"><i data-lucide="arrow-up-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-32 relative border-t border-neutral-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brandPrimary mb-3">FAQ</h2>
+                <p class="font-sora text-3xl md:text-5xl font-bold text-white tracking-tight">Réponses à vos interrogations.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item glass-card rounded-2xl overflow-hidden border border-neutral-900 transition-colors reveal">
+                    <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-sora font-semibold text-white text-base md:text-lg">Quels types d'entreprises accompagnez-vous ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-neutral-400 text-sm leading-relaxed border-t border-neutral-900/50">
+                            Nous collaborons principalement avec des startups ambitieuses, des PME en phase de scale-up ainsi que des marques premium recherchant un positionnement haut de gamme et des solutions technologiques de pointe.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden border border-neutral-900 transition-colors reveal">
+                    <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-sora font-semibold text-white text-base md:text-lg">Comment intégrez-vous l'IA dans vos livrables ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-neutral-400 text-sm leading-relaxed border-t border-neutral-900/50">
+                            L'IA intervient sur deux axes : l'optimisation de vos processus internes (automatisations CRM, agents conversationnels) et l'analyse prédictive de vos données marketing pour maximiser le ROI de chaque campagne.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-2xl overflow-hidden border border-neutral-900 transition-colors reveal">
+                    <button class="w-full p-6 text-left flex justify-between items-center focus:outline-none" aria-expanded="false">
+                        <span class="font-sora font-semibold text-white text-base md:text-lg">Quelle est la durée moyenne d'un projet de refonte globale ?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 pt-0 text-neutral-400 text-sm leading-relaxed border-t border-neutral-900/50">
+                            Un cycle complet (Découverte, Stratégie, Design et Déploiement) s'étend généralement sur 4 à 8 semaines selon la complexité fonctionnelle et l’étendue de la charte de marque demandée.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-gradient-to-t from-brandBg to-neutral-950 border-t border-neutral-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                
+                <div class="lg:col-span-5 flex flex-col gap-8 reveal">
+                    <div>
+                        <h2 class="text-xs font-bold tracking-widest uppercase text-brandAccent mb-3">Initiation de Projet</h2>
+                        <p class="font-sora text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">Façonnons l'avenir ensemble.</p>
+                    </div>
+                    <p class="text-neutral-400 text-sm leading-relaxed">
+                        Prenez contact dès aujourd'hui. Nos experts analyseront vos besoins sous 24 heures ouvrées afin de vous formuler une proposition d'intervention stratégique sur-mesure.
+                    </p>
+                    
+                    <div class="flex flex-col gap-4 mt-4">
+                        <a href="https://wa.me/33600000000" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366]/20 transition-all text-[#25D366] font-semibold text-sm">
+                            <i data-lucide="phone" class="w-5 h-5"></i> Échanger instantanément via WhatsApp
+                        </a>
+                        <a href="mailto:contact@nexorastudio.com" class="flex items-center gap-4 p-4 rounded-2xl bg-brandSurface/40 border border-neutral-900 hover:border-neutral-800 transition-all text-neutral-300 font-semibold text-sm">
+                            <i data-lucide="mail" class="w-5 h-5 text-brandAccent"></i> contact@nexorastudio.com
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-neutral-500 pt-4">
+                        <a href="#" aria-label="Linkedin" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" aria-label="Instagram" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" aria-label="Twitter" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden reveal" style="transition-delay: 100ms;">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label for="name" class="text-xs font-bold uppercase tracking-wider text-neutral-400">Nom Complet</label>
+                                <input type="text" id="name" required class="bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPrimary transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="email" class="text-xs font-bold uppercase tracking-wider text-neutral-400">Adresse Email</label>
+                                <input type="email" id="email" required class="bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPrimary transition-colors">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="service-select" class="text-xs font-bold uppercase tracking-wider text-neutral-400">Service Requis</label>
+                            <select id="service-select" class="bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-neutral-400 focus:outline-none focus:border-brandPrimary transition-colors">
+                                <option value="branding">Branding Premium</option>
+                                <option value="ia">Intelligence Artificielle</option>
+                                <option value="cm">Community Management</option>
+                                <option value="marketing">Marketing Digital</option>
+                                <option value="growth">Growth Strategy</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="message" class="text-xs font-bold uppercase tracking-wider text-neutral-400">Détails du projet</label>
+                            <textarea id="message" rows="4" required class="bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPrimary transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full btn-ripple bg-white text-black py-4 rounded-xl font-bold text-sm tracking-wide hover:bg-neutral-200 transition-colors">Envoyer le cahier des charges</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-neutral-900 bg-brandBg">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-2 items-center md:items-start">
+                <div class="font-sora font-extrabold text-white text-lg tracking-tight">NEXORA STUDIO</div>
+                <p class="text-xs text-neutral-500">© 2026 Nexora Studio. Tous droits réservés.</p>
+            </div>
+            
+            <div class="w-full max-w-sm">
+                <form id="newsletter-form" class="flex gap-2">
+                    <input type="email" placeholder="Votre email" required class="w-full bg-neutral-900 border border-neutral-800 rounded-full px-4 py-2 text-xs text-white focus:outline-none focus:border-brandAccent">
+                    <button type="submit" class="bg-brandPrimary text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-blue-700 transition">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
