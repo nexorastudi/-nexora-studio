@@ -1,143 +1,108 @@
-// Initialize Icons and Wait for Structural Load
-document.addEventListener('DOMContentLoaded', () => {
-    // Inject Lucide Icon elements natively
-    lucide.createIcons();
+/* Custom Global Refinement Styles */
 
-    // 1. Dismiss Preloader Phase
-    const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.transition = 'opacity 0.5s ease-out';
-            setTimeout(() => preloader.remove(), 500);
-        }, 800); // Luxury artificial padding for assets validation
-    });
+:root {
+    --brand-primary: #2563EB;
+    --brand-bg: #111111;
+    --brand-surface: #1F2937;
+    --brand-text: #F5F5F5;
+    --brand-accent: #60A5FA;
+}
 
-    // 2. Navigation Blur & Sticky State Toggle
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('nav-blur');
-        } else {
-            navbar.classList.remove('nav-blur');
-        }
-    });
+/* Custom Selection Highlight */
+::selection {
+    background-color: var(--brand-primary);
+    color: white;
+}
 
-    // 3. Mobile Responsive Toggle System
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+/* Base resets & Fonts mapping overrides */
+h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+}
 
-    const toggleMobileMenu = () => {
-        mobileMenu.classList.toggle('hidden');
-        const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenuBtn.innerHTML = isHidden ? '<i data-lucide="menu" class="w-6 h-6"></i>' : '<i data-lucide="x" class="w-6 h-6"></i>';
-        lucide.createIcons();
-    };
-
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-    // 4. Scroll Reveal Intersections Framework
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Trigger animation once
-            }
-        });
-    }, { threshold: 0.15 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // 5. Statistics Incremental Counters Logic
-    const counters = document.querySelectorAll('.counter');
-    const startCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace(/[^0-9]/g, '');
-        const speed = target / 100;
-
-        const updateCount = () => {
-            const currentCount = +counter.innerText.replace(/[^0-9]/g, '');
-            if (currentCount < target) {
-                counter.innerText = Math.ceil(currentCount + speed) + (counter.getAttribute('data-target').includes('%') ? '%' : counter.getAttribute('data-target').includes('+') ? '+' : 'x');
-                setTimeout(updateCount, 15);
-            } else {
-                counter.innerText = counter.getAttribute('data-target');
-            }
-        };
-        updateCount();
-    };
-
-    const countersObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(c => countersObserver.observe(c));
-
-    // 6. Portfolio Isotope-style Pure Filtering Engine
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
-            filterButtons.forEach(btn => btn.classList.add('text-neutral-500'));
-            button.classList.add('active', 'text-white');
-            button.classList.remove('text-neutral-500');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            portfolioItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.classList.remove('hidden-item');
-                } else {
-                    item.classList.add('hidden-item');
-                }
-            });
-        });
-    });
-
-    // 7. Micro-interactions: Smooth Accordion System
-    const faqItems = document.querySelectorAll('.faq-item button');
-    faqItems.forEach(button => {
-        button.addEventListener('click', () => {
-            const expanded = button.getAttribute('aria-expanded') === 'true' || false;
-            button.setAttribute('aria-expanded', !expanded);
-            
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('[data-lucide="chevron-down"]');
-
-            if (!expanded) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                if(icon) icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.style.maxHeight = '0px';
-                if(icon) icon.style.transform = 'rotate(0deg)';
-            }
-        });
-    });
-
-    // 8. Contact Form UX Feedback simulation
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            submitBtn.innerText = 'Transmission en cours...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                submitBtn.innerText = 'Message Transmis avec Succès !';
-                submitBtn.style.backgroundColor = '#10B981';
-                submitBtn.style.color = '#FFFFFF';
-                contactForm.reset();
-            }, 1500);
-        });
+/* Smooth Scrolling performance tweak */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
     }
-});
+}
+
+/* Premium Glassmorphism Configuration */
+.glass-card {
+    background: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(96, 165, 250, 0.2);
+}
+
+/* Nav Blur Interaction state */
+.nav-blur {
+    background: rgba(17, 17, 17, 0.75) !important;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Keyframe Animations definition */
+@keyframes loadingBar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+.animate-loading-bar {
+    animation: loadingBar 1.5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 8s infinite ease-in-out;
+}
+
+/* Reveal on scroll styling baseline setup */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Interactive Component Filtering layout logic */
+.portfolio-item {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portfolio-item.hidden-item {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Active Filtering Button */
+.filter-btn.active {
+    color: #ffffff;
+    border-bottom: 2px solid var(--brand-accent);
+}
+
+/* Custom Form element optimizations */
+input, select, textarea {
+    will-change: border-color;
+}
