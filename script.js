@@ -1,34 +1,41 @@
-// Gestion du défilement de la Navbar
-window.addEventListener('scroll', function() {
-    const nav = document.getElementById('mainNav');
-    if (window.scrollY > 100) {
-        nav.style.padding = '10px 0';
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
-        nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
-    } else {
-        nav.style.padding = '20px 0';
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        nav.style.boxShadow = 'none';
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    "use strict";
 
-// Animation d'apparition au scroll (simple)
-const observerOptions = {
-    threshold: 0.1
-};
+    // Intersection Observer for scroll-triggered reveal animations
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.12
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target); // Unobserve to animate only once
+            }
+        });
+    }, observerOptions);
+
+    const revealElements = document.querySelectorAll(".reveal");
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
     });
-}, observerOptions);
 
-document.querySelectorAll('.expertise-card, .portfolio-item, .about-info').forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.8s ease-out";
-    observer.observe(el);
+    // Smooth scrolling for anchor links (fallback/enhancement to CSS scroll-behavior)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    });
 });
