@@ -1,143 +1,34 @@
-// Initialize Icons and Wait for Structural Load
-document.addEventListener('DOMContentLoaded', () => {
-    // Inject Lucide Icon elements natively
-    lucide.createIcons();
+// Gestion du défilement de la Navbar
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 100) {
+        nav.style.padding = '10px 0';
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
+        nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+    } else {
+        nav.style.padding = '20px 0';
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        nav.style.boxShadow = 'none';
+    }
+});
 
-    // 1. Dismiss Preloader Phase
-    const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.transition = 'opacity 0.5s ease-out';
-            setTimeout(() => preloader.remove(), 500);
-        }, 800); // Luxury artificial padding for assets validation
-    });
+// Animation d'apparition au scroll (simple)
+const observerOptions = {
+    threshold: 0.1
+};
 
-    // 2. Navigation Blur & Sticky State Toggle
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('nav-blur');
-        } else {
-            navbar.classList.remove('nav-blur');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
         }
     });
+}, observerOptions);
 
-    // 3. Mobile Responsive Toggle System
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    const toggleMobileMenu = () => {
-        mobileMenu.classList.toggle('hidden');
-        const isHidden = mobileMenu.classList.contains('hidden');
-        mobileMenuBtn.innerHTML = isHidden ? '<i data-lucide="menu" class="w-6 h-6"></i>' : '<i data-lucide="x" class="w-6 h-6"></i>';
-        lucide.createIcons();
-    };
-
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-    // 4. Scroll Reveal Intersections Framework
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Trigger animation once
-            }
-        });
-    }, { threshold: 0.15 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // 5. Statistics Incremental Counters Logic
-    const counters = document.querySelectorAll('.counter');
-    const startCounter = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace(/[^0-9]/g, '');
-        const speed = target / 100;
-
-        const updateCount = () => {
-            const currentCount = +counter.innerText.replace(/[^0-9]/g, '');
-            if (currentCount < target) {
-                counter.innerText = Math.ceil(currentCount + speed) + (counter.getAttribute('data-target').includes('%') ? '%' : counter.getAttribute('data-target').includes('+') ? '+' : 'x');
-                setTimeout(updateCount, 15);
-            } else {
-                counter.innerText = counter.getAttribute('data-target');
-            }
-        };
-        updateCount();
-    };
-
-    const countersObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    counters.forEach(c => countersObserver.observe(c));
-
-    // 6. Portfolio Isotope-style Pure Filtering Engine
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
-            filterButtons.forEach(btn => btn.classList.add('text-neutral-500'));
-            button.classList.add('active', 'text-white');
-            button.classList.remove('text-neutral-500');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            portfolioItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.classList.remove('hidden-item');
-                } else {
-                    item.classList.add('hidden-item');
-                }
-            });
-        });
-    });
-
-    // 7. Micro-interactions: Smooth Accordion System
-    const faqItems = document.querySelectorAll('.faq-item button');
-    faqItems.forEach(button => {
-        button.addEventListener('click', () => {
-            const expanded = button.getAttribute('aria-expanded') === 'true' || false;
-            button.setAttribute('aria-expanded', !expanded);
-            
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('[data-lucide="chevron-down"]');
-
-            if (!expanded) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                if(icon) icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.style.maxHeight = '0px';
-                if(icon) icon.style.transform = 'rotate(0deg)';
-            }
-        });
-    });
-
-    // 8. Contact Form UX Feedback simulation
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            submitBtn.innerText = 'Transmission en cours...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                submitBtn.innerText = 'Message Transmis avec Succès !';
-                submitBtn.style.backgroundColor = '#10B981';
-                submitBtn.style.color = '#FFFFFF';
-                contactForm.reset();
-            }, 1500);
-        });
-    }
+document.querySelectorAll('.expertise-card, .portfolio-item, .about-info').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "all 0.8s ease-out";
+    observer.observe(el);
 });
