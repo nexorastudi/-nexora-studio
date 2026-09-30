@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Nexora Studio</title>
+  <desc id="desc">Monogramme N géométrique bleu cobalt sur fond noir</desc>
+  <rect width="64" height="64" fill="#111111"/>
+  <path d="M15 48V16h7l20 21V16h7v32h-7L22 27v21z" fill="#F5F5F0"/>
+  <path d="M15 16h7l20 21v-8l7 7v12h-7L22 27v8l-7-7z" fill="#2563EB"/>
+</svg>

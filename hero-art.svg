@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 700" fill="none" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Sculpture géométrique Nexora</title>
+  <desc id="hero-desc">Composition abstraite noire et bleue évoquant la précision, le mouvement et la stratégie.</desc>
+  <defs>
+    <linearGradient id="blue" x1="100" y1="80" x2="640" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="0.45" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#123B9C"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(540 250) rotate(110) scale(300)">
+      <stop stop-color="#2563EB" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <circle cx="540" cy="250" r="260" fill="url(#glow)" filter="url(#blur)"/>
+  <path d="M90 550 280 112l270 112-94 376z" fill="#171717" stroke="#343434" stroke-width="2"/>
+  <path d="m280 112 225-47 148 158-197 1z" fill="#262626" stroke="#3B3B3B" stroke-width="2"/>
+  <path d="m550 224 103-1 93 111-290 8z" fill="#0E0E0E" stroke="#323232" stroke-width="2"/>
+  <path d="m148 489 248-11 60 22-103 44-235 22z" fill="#202020"/>
+  <path d="m208 492 261-217 78 1-276 249z" fill="url(#blue)"/>
+  <path d="m249 167 55-13 263 254-33 50z" fill="#F5F5F0" fill-opacity=".88"/>
+  <path d="m293 154 92-19 192 182-29 33z" fill="#60A5FA" fill-opacity=".7"/>
+  <path d="M210 493c88-76 167-148 258-220" stroke="#F5F5F0" stroke-opacity=".72" stroke-width="2"/>
+  <path d="M123 597 674 102" stroke="#60A5FA" stroke-opacity=".24" stroke-width="1" stroke-dasharray="5 12"/>
+  <circle cx="674" cy="102" r="5" fill="#60A5FA"/>
+  <circle cx="123" cy="597" r="4" fill="#2563EB"/>
+</svg>
